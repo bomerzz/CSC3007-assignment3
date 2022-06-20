@@ -32,6 +32,13 @@
 
 <script>
 
+const colors = d3.schemeSpectral[7]
+const domain = [100, 500, 1000, 10000, 50000, 100000, 200000]
+
+var color = d3.scaleOrdinal()
+    .domain(domain)
+    .range(colors)
+
 let width = 1000, height = 600;
 
 let svg = d3.select("svg")
@@ -57,7 +64,7 @@ svg.append("g")
     .enter()
     .append("path")
     .attr("d", geopath)
-    .attr("fill", "black");
+    .attr("fill", "white");
 })
 
 </script>
